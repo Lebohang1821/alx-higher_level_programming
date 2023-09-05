@@ -9,12 +9,13 @@ def fizzbuzz():
     For multiples of three and five, print FizzBuzz instead of the number.
     """
     for number in range(1, 101):
-        output = ""
-        if number % 3 == 0:
-            output += "Fizz"
-        if number % 5 == 0:
-            output += "Buzz"
-        print(output if output else number, end=" ")
-    print()
+        if number % 3 == 0 and number % 5 == 0:
+            print("FizzBuzz", end=" ")
+        elif number % 3 == 0:
+            print("Fizz", end=" ")
+        elif number % 5 == 0:
+            print("Buzz", end=" ")
+        else:
+            print(number, end=" ")
 
 fizzbuzz()
