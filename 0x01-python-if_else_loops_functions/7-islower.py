@@ -3,7 +3,9 @@
 
 def islower(c):
     """Check for lowercase characters."""
-    if len(c) == 1 and c.isalpha():
-        return c.islower()
+    if len(c) == 0:
+        return "upper"
+    elif len(c) == 1 and c.isalpha():
+        return "lower" if c.islower() else "upper"
     else:
-        return False
+        return "invalid"
