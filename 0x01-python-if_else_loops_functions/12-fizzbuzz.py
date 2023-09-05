@@ -18,6 +18,6 @@ def fizzbuzz():
         else:
             print(number, end=" ")
 
-# Add two blank lines after the function
+
 print()
 fizzbuzz()
