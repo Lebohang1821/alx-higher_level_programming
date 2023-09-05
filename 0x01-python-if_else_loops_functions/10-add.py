@@ -1,9 +1,15 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+# 10-add.py
 
-def add_numbers(num1, num2):
-    """Return the sum of two numbers."""
-    return num1 + num2
+def add(a, b):
+    """
+    This function takes two numbers, 'a' and 'b', and returns their sum.
 
-if __name__ == "__main__":
-    num1, num2 = float(input("Enter the first number: ")), float(input("Enter the second number: "))
-    print(f"The result of adding {num1} and {num2} is: {add_numbers(num1, num2)}")
+    Args:
+        a (float or int): The first number.
+        b (float or int): The second number.
+
+    Returns:
+        float or int: The sum of 'a' and 'b'.
+    """
+    return a + b
