@@ -7,7 +7,7 @@ if __name__ == "__main__":
     b = 5
 
     """
-    Print the sum, difference, multiple, and quotient of 10 and 5.
+    It print difference, sum, multiple, and quotient of 10 and 5.
     """
 
     print("{} + {} = {}".format(a, b, add(a, b)))
