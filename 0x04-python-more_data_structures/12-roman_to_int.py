@@ -5,16 +5,16 @@ def roman_to_int(roman_string):
 
     rom_n = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
-    num = 0
-    last_rom = 0
+    numb = 0
+    las_rom = 0
 
     for ch in roman_string:
         if ch in rom_n:
             current_value = rom_n[ch]
-            if current_value <= last_rom:
-                num += current_value
+            if current_value <= las_rom:
+                numb += current_value
             else:
-                num += current_value - 2 * last_rom
-            last_rom = current_value
+                numb += current_value - 2 * las_rom
+            las_rom = current_value
 
-    return num
+    return (numb)
