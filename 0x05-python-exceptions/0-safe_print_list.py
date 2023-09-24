@@ -2,8 +2,7 @@
 
 def safe_print_list(my_list=[], x=0):
 
-    """
-	Prints x elememts of list.
+    """Prints x elememts of list.
 
     Args:
         my_list (list): List to print elements from.
