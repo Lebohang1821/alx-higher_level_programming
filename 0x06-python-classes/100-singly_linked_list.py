@@ -1,58 +1,60 @@
 #!/usr/bin/python3
+"""It define classes for singly-linked list."""
 
 
 class Node:
-
     def __init__(self, data, next_node=None):
-        self.data = data
-        self.next_node = next_node
+        """
+        Initialize new Node.
 
-    @property
-    def data(self):
-        return (self.__data)
-
-    @data.setter
-    def data(self, value):
-        if not isinstance(value, int):
+        Args:
+            data (int): data of new Node.
+            next_node (Node): ext node of new Node.
+        """
+        if not isinstance(data, int):
             raise TypeError("data must be an integer")
-        self.__data = value
-
-    @property
-    def next_node(self):
-        return (self.__next_node)
-
-    @next_node.setter
-    def next_node(self, value):
-        if not isinstance(value, Node) and value is not None:
+        if next_node is not None and not isinstance(next_node, Node):
             raise TypeError("next_node must be a Node object")
-        self.__next_node = value
+        
+        self.__data = data
+        self.__next_node = next_node
 
 
 class SinglyLinkedList:
-
     def __init__(self):
+        """
+        Initialize new SinglyLinkedList.
+        """
         self.__head = None
 
     def sorted_insert(self, value):
-        new = Node(value)
-        if self.__head is None:
-            new.next_node = None
-            self.__head = new
-        elif self.__head.data > value:
-            new.next_node = self.__head
-            self.__head = new
+        """
+        Insert new Node into correct sorted position in the list (increasing order).
+
+        Args:
+            value (int): Value to insert as a new Node.
+        """
+        new_node = Node(value)
+        if self.__head is None or self.__head._Node__data > value:
+            new_node._Node__next_node = self.__head
+            self.__head = new_node
         else:
-            tmp = self.__head
-            while (tmp.next_node is not None and
-                    tmp.next_node.data < value):
-                tmp = tmp.next_node
-            new.next_node = tmp.next_node
-            tmp.next_node = new
+            current = self.__head
+            while current._Node__next_node is not None and current._Node__next_node._Node__data < value:
+                current = current._Node__next_node
+            new_node._Node__next_node = current._Node__next_node
+            current._Node__next_node = new_node
 
     def __str__(self):
+        """
+        Define string representation of a SinglyLinkedList.
+
+        Returns:
+            str: String containing one node number per line.
+        """
         values = []
-        tmp = self.__head
-        while tmp is not None:
-            values.append(str(tmp.data))
-            tmp = tmp.next_node
-        return ('\n'.join(values))
+        current = self.__head
+        while current is not None:
+            values.append(str(current._Node__data))
+            current = current._Node__next_node
+        return '\n'.join(values)
