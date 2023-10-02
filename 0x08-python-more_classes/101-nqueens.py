@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Solves the N-queens puzzle.
+"""
+Solves the N-queens puzzle.
 
-Determines all possible solutions to placing N
-N non-attacking queens on an NxN chessboard.
+This Python script finds and displays all possible solutions for placing N non-attacking queens on an NxN chessboard.
 
 Example:
     $ ./101-nqueens.py N
@@ -14,9 +14,9 @@ Attributes:
     solutions (list): A list of lists containing solutions.
 
 Solutions are represented in the format [[r, c], [r, c], [r, c], [r, c]]
-where `r` and `c` represent the row and column, respectively, where a
-queen must be placed on the chessboard.
+where `r` and `c` represent the row and column, respectively, where a queen must be placed on the chessboard.
 """
+
 import sys
 
 
