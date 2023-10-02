@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""Solves N-queens puzzle.
+"""Solves the N-queens puzzle.
 
-Determines all possible solutions for placing N non-attacking queens on an NxN chessboard.
+Finds all possible solutions for placing N non-attacking queens on an NxN chessboard.
 
 Example:
     $ ./101-nqueens.py N
 
-N should be integer greater than or equal to 4.
+N must be an integer greater than or equal to 4.
 
 Attributes:
-    board (list): List of lists representing chessboard.
+    board (list): List of lists representing the chessboard.
     solutions (list): List of lists containing solutions.
 
 Solutions are represented as [[r, c], [r, c], [r, c], [r, c]], where `r` and `c` represent the row and column where a queen must be placed on the chessboard.
@@ -18,7 +18,7 @@ import sys
 
 
 def init_board(n):
-    """It initialize an `n`x`n` sized chessboard with 0's."""
+    """Initialize an `n`x`n` sized chessboard with 0's."""
     board = []
     [board.append([]) for i in range(n)]
     [row.append(' ') for i in range(n) for row in board]
@@ -46,12 +46,13 @@ def get_solution(board):
 def xout(board, row, col):
     """X out spots on a chessboard.
 
-    All spots where non-attacking queens can no longer be played are X-ed out.
+    All spots where non-attacking queens can no
+    longer be played are X-ed out.
 
     Args:
-        board (list): Current working chessboard.
-        row (int): Row where a queen was last played.
-        col (int): Column where a queen was last played.
+        board (list): The current working chessboard.
+        row (int): The row where a queen was last played.
+        col (int): The column where a queen was last played.
     """
     # X out all forward spots
     for c in range(col + 1, len(board)):
@@ -99,9 +100,9 @@ def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
 
     Args:
-        board (list): Current working chessboard.
-        row (int): Current working row.
-        queens (int): Current number of placed queens.
+        board (list): The current working chessboard.
+        row (int): The current working row.
+        queens (int): The current number of placed queens.
         solutions (list): List of lists of solutions.
     Returns:
         solutions
