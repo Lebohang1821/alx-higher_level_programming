@@ -2,7 +2,7 @@
 """It defines restricted attribute class."""
 
 
-class RestrictedAttributes:
+class LockedClass:
     """
     It restricts creation of new attributes for instances of this class
     to only allow 'first_name' attribute.
