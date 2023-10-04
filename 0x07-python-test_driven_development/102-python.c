@@ -1,7 +1,3 @@
-/*
- * File: 102-python.c
- */
-
 #include "Python.h"
 
 /**
