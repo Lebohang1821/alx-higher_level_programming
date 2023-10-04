@@ -1,16 +1,13 @@
-# 101-lazy_matrix_mul.txt
-
-=================================
-How to Use 101-lazy_matrix_mul.py
+Test for 101-lazy_matrix_mul.py
 =================================
 
-This module defines a matrix multiplication function
+This module defines matrix multiplication function
 ``lazy_matrix_mul(m_a, m_b)``.
 
 Usage
 =====
 
-``lazy_matrix_mul(...)`` returns a new matrix representing the multiplication
+``lazy_matrix_mul(...)`` returns a new matrix representing multiplication
 of ``m_a`` by ``m_b``.
 
 ::
@@ -35,7 +32,7 @@ of ``m_a`` by ``m_b``.
     >>> print(lazy_matrix_mul(m_a, m_b))
     [[13 16]]
 
-The function also works with floating-point numbers.
+Function also works with floating-point numbers.
 
 ::
 
@@ -52,7 +49,7 @@ The function also works with floating-point numbers.
     [[ 34.69   55.44 ]
      [-78.61   29.018]]
 
-A minimum of two arguments must be provided.
+Minimum of two arguments must be provided.
 
 ::
 
@@ -71,7 +68,7 @@ ValueErrors
 ===========
 
 If two matrices cannot be multiplied (ie. the row count of ``m_a`` is not
-equal to the column count in ``m_b``), a ValueError is raised.
+equal to column count in ``m_b``), a ValueError is raised.
 
 ::
 
