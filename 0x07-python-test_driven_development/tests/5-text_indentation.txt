@@ -1,0 +1,71 @@
+# Import the required function
+from importlib import import_module
+
+# Import the text_indentation function from the '5-text_indentation' module
+text_indentation = import_module('5-text_indentation').text_indentation
+
+# Valid arguments
+# Test with a string containing multiple spaces and tabs
+input_text = 'Is there anyone who loves pain itself? \t\t\t          who seeks after it and wants to have it? simply because it is pain?'
+result = text_indentation(input_text)
+print(result)
+'''
+Expected Output:
+Is there anyone who loves pain itself?
+
+who seeks after it and wants to have it?
+
+simply because it is pain?
+'''
+
+# Test with a string containing newlines and tabs
+input_text = 'Is there anyone \n\t\t  who loves pain itself? \t\t\t          who seeks after it and wants to have it? simply because it is pain?'
+result = text_indentation(input_text)
+print(result)
+'''
+Expected Output:
+Is there anyone
+who loves pain itself?
+
+who seeks after it and wants to have it?
+
+simply because it is pain?
+'''
+
+# Test with a string containing leading and trailing whitespace
+input_text = '\nIs there anyone \n\t\t  who loves pain itself?'
+result = text_indentation(input_text)
+print(result)
+'''
+Expected Output:
+Is there anyone
+who loves pain itself?
+'''
+
+# Test with a string containing special characters
+input_text = '\nIs there any.?\none \n\t\t  who loves pain itself?'
+result = text_indentation(input_text)
+print(result)
+'''
+Expected Output:
+Is there any.
+?
+one
+who loves pain itself?
+'''
+
+# Invalid arguments
+try:
+    # Test with an integer input
+    text_indentation(45)
+except TypeError as ex:
+    print(ex.args[0])
+    # Output: text must be a string
+
+try:
+    # Test with bytes input
+    text_indentation(b'What?He was 22.')
+except TypeError as ex:
+    print(ex.args[0])
+    # Output: text must be a string
+
