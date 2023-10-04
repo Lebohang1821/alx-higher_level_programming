@@ -1,0 +1,31 @@
+# Import the required libraries
+import ctypes
+import os
+import subprocess
+from subprocess import Popen, PIPE
+
+# Define the path to the shared library and the Python script
+lib_path = os.path.abspath(os.path.join(os.path.curdir, './libPython.so'))
+prog_path = os.path.abspath(os.path.join(os.path.curdir, './102-python.py'))
+
+# Create a subprocess to echo an empty string
+in_p = Popen(['echo', ''], stdout=PIPE, stderr=PIPE)
+
+# Launch the Python script as another subprocess, connecting its stdin to the output of the previous subprocess
+rec_p = Popen([prog_path], stdin=in_p.stdout, stdout=PIPE, stderr=subprocess.STDOUT)
+
+# Close the stdout of the first subprocess to allow the second one to receive a SIGPIPE if the first one exits
+in_p.stdout.close()
+
+# Capture the output of the second subprocess and decode it as UTF-8
+output = rec_p.communicate()[0].decode('utf-8')
+
+# Check the return code of the second subprocess
+return_code = rec_p.returncode
+
+# Terminate both subprocesses
+in_p.kill()
+rec_p.kill()
+
+# Print the output
+print(output, end='')
