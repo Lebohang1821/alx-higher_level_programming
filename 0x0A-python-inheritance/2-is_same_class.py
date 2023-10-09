@@ -13,5 +13,5 @@ def is_instance_of_class(obj, class_to_check):
         bool: True if object is instance of specified class, False otherwise
     """
     if type(obj) == class_to_check:
-        return (True)
-    return (False)
+        return True
+    return False
