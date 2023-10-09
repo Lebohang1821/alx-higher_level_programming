@@ -1,10 +1,12 @@
-Test for 1-my_list.py
+# Import the MyList class from the 1-my_list module
 -------------------------------------------
 
 case 0: import
 >>> MyList = __import__('1-my_list').MyList
 >>>
--------------------------------------------
+
+# Common case: Create MyList instance, append values, 
+print and print_sorted
 
 case 1: common case
 
@@ -22,7 +24,7 @@ case 1: common case
 [1, 4, 2, 3, 5]
 >>>
 
--------------------------------------------
+# Try to access an undefined object (my_list2)
 
 case 2: not defined object
 
@@ -33,7 +35,7 @@ Traceback (most recent call last):
 NameError: name 'my_list2' is not defined
 >>>
 
--------------------------------------------
+# Create a MyList instance with a list, print_sorted
 
 case 3: passed a list
 
@@ -43,7 +45,7 @@ case 3: passed a list
 [1, 4, 9]
 >>>
 
--------------------------------------------
+# Create MyList instance with empty list, print_sorted
 
 case 4: empty list
 
@@ -53,8 +55,7 @@ case 4: empty list
 []
 >>>
 
--------------------------------------------
-
+# Append a unique number, print and print_sorted
 case 5: unique number
 
 >>> my_list = MyList()
@@ -65,7 +66,7 @@ case 5: unique number
 [1]
 >>>
 
--------------------------------------------
+# Append same number multiple times, print_sorted
 
 case 6: same number
 
@@ -78,7 +79,7 @@ case 6: same number
 [1, 1, 1, 1]
 >>>
 
--------------------------------------------
+# Try to call print_sorted on list object (not MyList)
 
 case 7: parent object
 >>> my_list = [1, 2, 3]
@@ -88,7 +89,7 @@ Traceback (most recent call last):
 AttributeError: 'list' object has no attribute 'print_sorted'
 >>>
 
--------------------------------------------
+# Append negative numbers, print_sorted
 
 case 8: negative numbers
 
