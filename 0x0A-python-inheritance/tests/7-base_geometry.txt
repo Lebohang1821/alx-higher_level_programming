@@ -1,0 +1,89 @@
+# Creating an instance of BaseGeometry
+>>> bg = BaseGeometry()
+
+# Trying to call the area() method, which is not implemented and should raise an Exception
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+# Trying to pass a non-integer argument to integer_validator, which should raise a TypeError
+>>> bg.integer_validator("name", "5")
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+# Trying to pass a boolean value to integer_validator, which should raise a TypeError
+>>> bg.integer_validator("name", True)
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+# Trying to pass a negative value to integer_validator, which should raise a ValueError
+>>> bg.integer_validator("name", -5)
+Traceback (most recent call last):
+    ...
+ValueError: name must be greater than 0
+
+# Trying to pass a zero value to integer_validator, which should raise a ValueError
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+    ...
+ValueError: name must be greater than 0
+
+# Passing a positive value to integer_validator, should not raise any exception
+>>> bg.integer_validator("name", 5)
+
+# Trying to call integer_validator with only one argument, which should raise a TypeError
+>>> bg.integer_validator("name")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+# Trying to call integer_validator with no arguments, which should raise a TypeError
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Trying to call integer_validator with three arguments, which should raise a TypeError
+>>> bg.integer_validator("name", 1, 2)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+# Trying to call the area method with one argument, which should raise a TypeError
+>>> bg.area(5)
+Traceback (most recent call last):
+    ...
+TypeError: area() takes 1 positional argument but 2 were given
+
+# Trying to call the area method with two arguments, which should raise a TypeError
+>>> bg.area(5, 5)
+Traceback (most recent call last):
+    ...
+TypeError: area() takes 1 positional argument but 3 were given
+
+# Passing a tuple to integer_validator, which should raise a TypeError
+>>> bg.integer_validator("age", (4,))
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+# Passing a list to integer_validator, which should raise a TypeError
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+# Passing a dictionary to integer_validator, which should raise a TypeError
+>>> bg.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+# Passing None to integer_validator, which should raise a TypeError
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
