@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-"""Defines an inherited list class MyList."""
+"""Custom list class MyList that extends functionality of built-in list"""
 
 
 class MyList(list):
-    """Implements sorted printing for the built-in list class."""
+    """
+    A custom list class that inherits from built-in list class and adds
+    the ability to print its elements in sorted ascending order.
+    """
 
     def print_sorted(self):
-        """Print a list in sorted ascending order."""
+        """
+        Print elements of list in sorted ascending order.
+        """
         print(sorted(self))
