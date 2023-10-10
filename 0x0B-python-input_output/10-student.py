@@ -10,7 +10,7 @@ class Student:
 
         Args:
             first_name (str): First name of student.
-            last_name (str): Last name of student.
+            last_name (str): Last name of a student.
             age (int): Age of student.
         """
         self.first_name = first_name
