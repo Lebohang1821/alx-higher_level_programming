@@ -1,1 +1,1 @@
-0x0A. Python - Inheritance_
+Higher level
