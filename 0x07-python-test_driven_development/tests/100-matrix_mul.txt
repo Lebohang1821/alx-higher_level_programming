@@ -1,0 +1,73 @@
+# Import the required matrix multiplication function
+>>> from importlib import import_module
+>>> matrix_multiply = import_module('100-matrix_mul').matrix_multiply
+
+# Valid matrix multiplication examples
+>>> print(matrix_multiply([[13, 12]], [[31], [21]]))
+# Result should be [[655]]
+[[655]]
+
+>>> print(matrix_multiply([[6, 8], [3, 7]], [[12, 3], [3, 4]]))
+# Result should be [[96, 50], [57, 37]]
+[[96, 50], [57, 37]]
+
+>>> print(matrix_multiply([[3, 19, 7], [11, 12, 5], [2, 4, 8]], [[12, 3], [9, 4], [15, 2]]))
+# Result should be [[312, 99], [315, 91], [180, 38]]
+[[312, 99], [315, 91], [180, 38]]
+
+# Invalid matrix multiplication examples with error messages
+>>> try:
+...     print(matrix_multiply(12, [[4, 6]]))
+... except TypeError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_a must be a list"
+m_a must be a list
+
+>>> try:
+...     print(matrix_multiply([[4, 6]], 12))
+... except TypeError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_b must be a list"
+m_b must be a list
+
+>>> try:
+...     print(matrix_multiply(['[4, 6]'], 12))
+... except TypeError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_b must be a list"
+m_b must be a list
+
+>>> try:
+...     print(matrix_multiply([(4, 6)], [12]))
+... except TypeError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_a must be a list of lists"
+m_a must be a list of lists
+
+>>> try:
+...     print(matrix_multiply([[4, 6]], [(12, )]))
+... except TypeError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_b must be a list of lists"
+m_b must be a list of lists
+
+>>> try:
+...     print(matrix_multiply([], [[12]]))
+... except ValueError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_a can't be empty"
+m_a can't be empty
+
+>>> try:
+...     print(matrix_multiply([['2', '3']], [[]]))
+... except ValueError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_b can't be empty"
+m_b can't be empty
+
+>>> try:
+...     print(matrix_multiply([[]], [[12]]))
+... except ValueError as ex:
+...     print(ex.args[0])
+# Expected error message: "m_a can't be empty"
+m_a can't be empty
