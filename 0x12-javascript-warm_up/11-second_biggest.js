@@ -1,5 +1,5 @@
 #!/usr/bin/node
- // It searches second biggest integer in list of arguments.
+// It searches second biggest integer in list of arguments.
 
 let biggest = 0;
 let v;
