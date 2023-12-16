@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ It takes in name of state as argument
 It lists all cities of that state, using the database hbtn_0e_4_usa
-mysql username, mysql password, database name and state name (SQL injection free!)
+mysql username, mysql password, database name and state nam
 """
 import sys
 import MySQLdb
