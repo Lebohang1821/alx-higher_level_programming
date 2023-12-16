@@ -11,8 +11,8 @@ from sqlalchemy import Column, Integer, String
 Base = declarative_base(
 
 class State(Base):
-    """It Represents state for MySQL database.
+"""It Represents state for MySQL database.
 """
 id = Column(Integer, primary_key=True)
-nm = Column(String(128), nullable=False)
+name = Column(String(128), nullable=False)
 
