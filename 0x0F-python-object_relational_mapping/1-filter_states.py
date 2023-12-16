@@ -3,8 +3,8 @@ It lists all states with name starting with N from database hbtn_0e_0_usa
 mysql username, mysql password and database name
 module MySQLdb (import MySQLdb)
 """
-import MySQLdb
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
