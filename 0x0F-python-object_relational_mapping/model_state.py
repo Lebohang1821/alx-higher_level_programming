@@ -8,9 +8,9 @@ It inks to the MySQL table states
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
-Bs = declarative_base(
+Base = declarative_base(
 
-class State(Bs):
+class State(Base):
     """It Represents state for MySQL database.
 """
 id = Column(Integer, primary_key=True)
