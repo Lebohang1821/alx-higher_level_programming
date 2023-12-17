@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-It ists * State objects from database hbtn_0e_6_usa
+It  lists all State objects from database hbtn_0e_6_usa
+It take 3 arguments: mysql username, mysql password and database name
+It import State and Base from model_state - from model_state
+import Base, State
 """
 import sys
 from sqlalchemy.orm import sessionmaker
@@ -8,11 +11,11 @@ from model_state import State
 from sqlalchemy import create_engine
 
 if __name__ == "__main__":
-    engn = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
-    Ses = sessionmaker(bind=engn)
-    ses = Ses()
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    for state in ses.query(State).order_by(State.id):
+    for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
