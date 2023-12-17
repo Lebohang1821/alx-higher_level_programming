@@ -6,10 +6,10 @@
  --It must be displayed as they are in example below
 """
 import sys
-from sqlalchemy import create_engine
+from relationship_city import City
 from sqlalchemy.orm import sessionmaker
 from relationship_state import State
-from relationship_city import City
+from sqlalchemy import create_engine
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
