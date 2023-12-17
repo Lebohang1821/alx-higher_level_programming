@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """
 It prints State object with name passed as 
-argument from database hbtn_0e
+-argument from database hbtn_0e_6_usa
+--4 arguments: mysql username, mysql password, 
+database name and state name - search (SQL injection free)
+---It display Not found
 """
 import sys
-from model_state import State
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import State
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
