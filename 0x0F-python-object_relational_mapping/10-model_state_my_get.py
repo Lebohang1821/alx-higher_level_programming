@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 """
 It prints State object with name passed as 
--argument from database hbtn_0e_6_usa
---4 arguments: mysql username, mysql password, 
-database name and state name - search (SQL injection free)
----It display Not found
+argument from database hbtn_0e
 """
 import sys
 from model_state import State
