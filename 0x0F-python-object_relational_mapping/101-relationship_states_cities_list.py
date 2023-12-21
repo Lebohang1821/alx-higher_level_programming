@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
  It lists * State objects, and corresponding City objects
- __contained in database hbtn_0e_101_usaIt 
+ __contained in database hbtn_0e_101_usaIt
  -It must be sorted in ascending order by states.id and cities.id
  --It must be displayed as they are in example below
 """
