@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""task 6 model"""
+"""It contains function"""
 
 
 def find_peak(list_of_integers):
