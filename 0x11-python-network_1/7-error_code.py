@@ -17,4 +17,3 @@ if __name__ == "__main__":
 
     except requests.HTTPError as err:
         print("Error code: {}".format(err.response.status_code))
-
