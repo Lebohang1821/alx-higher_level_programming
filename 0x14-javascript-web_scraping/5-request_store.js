@@ -1,29 +1,13 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
+// Import the 'fs' (file system) module for file-related operations
 const fs = require('fs');
+
+// Import the 'request' module for making HTTP requests
 const request = require('request');
 
-// Get the URL and file path from the command line arguments
-const url = process.argv[2];
-const filePath = process.argv[3];
-
-if (!url || !filePath) {
-  console.error('Usage: ./5-request_store.js <URL> <file-path>');
-  process.exit(1);
-}
-
-// Make a GET request to the specified URL
-request(url, (error, response, body) => {
-  if (error) {
-    console.error(error);
-  } else {
-    // Write the response body to the specified file path in UTF-8 encoding
-    fs.writeFile(filePath, body, 'utf-8', (writeError) => {
-      if (writeError) {
-        console.error(writeError);
-      } else {
-        console.log(`Contents of the webpage saved to ${filePath}`);
-      }
-    });
-  }
-});
+// Make a GET request to the URL provided as the first command line argument,
+// and pipe the response directly to a writable stream created using the
+// 'fs.createWriteStream' function with the file path provided as the second
+// command line argument.
+request(process.argv[2]).pipe(fs.createWriteStream(process.argv[3]));
