@@ -2,14 +2,14 @@
 
 const fs = require('fs');
 
-const filePath = process.argv[2];
+const myfile = process.argv[2];
 
-if (!filePath) {
+if (!myfile) {
   console.error('Usage: ./0-readme.js <file-path>');
   process.exit(1);
 }
 
-fs.readFile(filePath, 'utf-8', (err, data) => {
+fs.readFile(myfile, 'utf-8', (err, data) => {
   if (err) {
     console.error(err);
   } else {
