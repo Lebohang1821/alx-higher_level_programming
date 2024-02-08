@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-(lambda x: x("#pythoniscool\n"))(__import__("os").write)
+__import__("os").write(1, "#pythoniscool\n".encode("UTF-8"))
