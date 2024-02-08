@@ -5,7 +5,7 @@
 def add_integer(a, b=98):
     """It returns integer addition of a and b.
 
-    Float arguments are typecasted - 
+    Float arguments are typecasted -
     ints before addition performed.
 
     Raises:
