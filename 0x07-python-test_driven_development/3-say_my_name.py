@@ -5,11 +5,11 @@
 def say_my_name(first_name, last_name=""):
     """It print name.
 
-    This function takes two arguments, first_name and last_name, and prints them as formatted string.
+    This function takes two arguments, first_name and last_name
 
     Args:
         first_name (str): First name - print.
-        last_name (str): Last name - print. (optional, default is an empty string)
+        last_name (str): Last name - print. (optional)
 
     Raises:
         TypeError: If first_name or last_name are not strings.
